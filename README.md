@@ -1,1 +1,1 @@
-# msgpack4z-sample
+Simple Sbt project with Scala.
