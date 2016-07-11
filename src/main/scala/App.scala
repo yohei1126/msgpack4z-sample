@@ -1,6 +1,7 @@
 package com.example.msgpack4zsample
 
 import msgpack4z._
+import msgpack4z.CodecInstances.all._
 
 object Sample extends App {
   case class Foo(a: Boolean, b: String, c: List[Int])
@@ -14,6 +15,6 @@ object Sample extends App {
 
   val sample = Foo(true, "abcde", List(10, 20, 30))
   val bytes = instance.toBytes(sample, MsgOutBuffer.create())
-  val union =  MsgpackCodec[MsgpackUnion].unpackAndClose(MsgInBuffer(bytes))
+  val union = MsgpackCodec[MsgpackUnion].unpackAndClose(MsgInBuffer(bytes))
   println(union)
 }
